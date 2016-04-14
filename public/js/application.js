@@ -231,11 +231,7 @@ startListeners = function(){
 		}
 	});
 
-
-
-
 	$('.number_of_adults').change(function(event){
-
 		View.updatePriceInSubmitText($(this).val(), $(".trip-details").attr("data-trip-type"));
 		Model.getAvailableDatesForXAdults(
 			$(this).val(),
@@ -243,7 +239,6 @@ startListeners = function(){
 			$(".return-city").attr("data-city-id")
 		); // gets available dates for the next 2 months for however many passengers are selected then passes this to updateAvailableDates() which blocks out non-avaible dates for that many passengers
 		// Security Note: blocking out the available dates on the datepicker only works if the user has javascript enabled so we also have test in the model to make sure no trips are over booked. updateAvailableDates should be viewed a just a UI improvement and not a way of making sure trips aren't over booked
-
 		View.toggleDatePickerLoading(); // We have to disable the date picker while the ajax call for availble dates is being made otherwise the user could select a date before the date picker is refreshed
 	});
 
@@ -261,7 +256,6 @@ startListeners = function(){
 		Model.sendStripPaymentDetails($(this).serializeArray()); // sends stripe form data to /stripe/charge
 	});
 
-
 	$('input, select, textarea').bind('focus blur', function(event) {
 		var $viewportMeta = $('meta[name="viewport"]');
 		$viewportMeta.attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type == 'blur' ? 10 : 1));
@@ -270,7 +264,8 @@ startListeners = function(){
 	$(".datepicker").on("click", function () {
 		$('.datepicker').css("position", "relative");
 	});
-// this stuff needs to be cleaned up a lot
+
+  // this stuff needs to be cleaned up a lot
 	$(document).on("click", "#one-way", function(event){
 		event.preventDefault();
 		$(this).toggleClass("non-selected");
