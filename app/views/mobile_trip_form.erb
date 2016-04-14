@@ -8,7 +8,13 @@
 	.checkout-holder {
 		margin: 2% 0 0 0;
 	}
+  .back-links{ padding: 5%; }
+  .back-links a{ color: #C3C3C3; }
 </style>
+<div class="back-links">
+ <a href='#' id='trip-details-back' style='display:none;'>< Back to Trip Info</a>
+ <a href='#' id='passenger-details-back' style='display:none;'>< Back to Guest Info</a>
+</div>
 <div class="checkout-holder">
 	<div class="direction-selection-holder">
 		<div class="trip-type center">
@@ -33,6 +39,7 @@
 	<div class="error-holder">
 	</div>
 	<div class="form-area">
+    <div id='trip-details'>
 			<form action="*" class="trip-details-form">
 				<div class="form-group">
 					<!-- <label for="number_of_adults">How many adults are going?</label> -->
@@ -73,6 +80,9 @@
 					</div>
 			</div>
 			</form>
+    </div>
+    <div id='passenger-details'></div>
+    <div id='confirmation-details'></div>
 	</div>
 	<div class="confirmation-view"></div>
 </div>

@@ -7,14 +7,8 @@ var Model = {
 			dataType: "json",
 			data: tripData
 		}).done(function(response){
-			View.removeCityToggle()
-			View.updateFormArea(response)
-			// if (response.status == 200){
-			// 	$(".direction-selection-holder").remove();
-			// 	View.updateFormArea(response)
-			// } else {
-			// 	View.displayFormError(response)
-			// }
+			View.hideCityToggle();
+			View.showPassengerDetails(response);
 		});
 	},
 	// Note these to ajax calls could just go to one route /trips and have the logic for trip type done on the backend but I like the modularity of seperate routes
@@ -25,14 +19,8 @@ var Model = {
 			dataType: "json",
 			data: tripData
 		}).done(function(response){
-			View.removeCityToggle()
-			View.updateFormArea(response)
-			// if (response.status == 200){
-			// 	$(".direction-selection-holder").remove();
-			// 	View.updateFormArea(response)
-			// } else {
-			// 	View.displayFormError(response)
-			// }
+			View.hideCityToggle();
+			View.showPassengerDetails(response);
 		});
 	},
 
@@ -57,9 +45,10 @@ var Model = {
 			dataType: "json",
 			data: UserInfoHash
 		}).done(function(response){
-			var formArea = $(".form-area");
-			formArea.empty();
-			$(".confirmation-view").html(response);
+      $('#trip-details-back').hide();
+      $('#passenger-details-back').show();
+      $('#passenger-details').hide();
+			$('#confirmation-details').html(response);
 		});
 	},
 
@@ -77,14 +66,14 @@ var Model = {
 };
 
 var View = {
-	updateFormArea: function(newHTML){
-			formArea = $(".form-area");
-			formArea.empty();
-			formArea.html(newHTML);
+	showPassengerDetails: function(newHTML){
+      $('#trip-details').hide();
+			$('#passenger-details').html(newHTML);
+      $('#trip-details-back').show();
 	},
 
-	removeCityToggle: function(){
-		$(".direction-selection-holder").remove()
+	hideCityToggle: function(){
+		$(".direction-selection-holder").hide()
 	},
 
 	displayFormError: function(message){
@@ -170,8 +159,8 @@ var View = {
 
 	getTripDetailsFormInfo: function(formObj, callback, tripType){
 		var tripData = {};
-    tripData["depart-date"] = formObj.find('input.depart-date').val();
-    tripData["return-date"] = formObj.find('input.return-date').val();
+    tripData["depart-date"] = formObj.find("input.depart-date").val();
+    tripData["return-date"] = formObj.find("input.return-date").val();
 		tripData["number_of_adults"] = formObj.find(".number_of_adults").val();
 		tripData["departCityID"] = $(".depart-city").attr("data-city-id");
 		tripData["arriveCityID"] = $(".return-city").attr("data-city-id");
@@ -197,8 +186,6 @@ var View = {
 			}
 	}
 };
-
-
 
 
 startListeners = function(){
@@ -317,8 +304,26 @@ $(document).ready(function() {
 	paginit()
 });
 
+function formBackLinkInit(){
+  $('#trip-details-back').click(function(){
+    $('#trip-details').show();
+    $('#passenger-details').html('');
+		$('.direction-selection-holder').show()
+    $(this).hide();
+    return false;
+  })
+  $('#passenger-details-back').click(function(){
+    $('#passenger-details').show();
+    $('#confirmation-details').html('');
+    $('#trip-details-back').show();
+    $(this).hide();
+    return false;
+  })
+}
+
 paginit = function(){
 	isMobile = window.matchMedia("only screen and (max-width: 760px)");
 	View.setUpLanding();
 	startListeners();
+  formBackLinkInit();
 }

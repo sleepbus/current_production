@@ -86,4 +86,3 @@ get "/trips/availability" do
 		return [depart_trips].to_json
 	end
 end
-

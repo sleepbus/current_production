@@ -572,7 +572,7 @@ Landing Main
 		font-size: 30px;
 	}
 
-	.confirmation-view {
+	.confirmation-details {
 		text-align: left;
 		overflow: auto;
 	}
@@ -683,6 +683,15 @@ Forms styling
   cursor: pointer;
 }
 
+.home-form .back-links{
+  padding-bottom: 10px;
+}
+
+.home-form .back-links a{
+  color: #505050;
+  font-size: 12px;
+}
+
 .home-form .checkout-holder{
   background: linear-gradient(-180deg, #676767 0%, #383838 100%);
   width: 320px;
@@ -754,17 +763,17 @@ Forms styling
 /*************************************
 Confirmation Page
 *************************************/
-.confirmation-view {
+#confirmation-details {
 	width: 80%;
 	margin: auto;
   padding-bottom: 50px;
 }
 
-.confirmation-view h4 {
+#confirmation-details h4 {
 	color: white;
 }
 
-.confirmation-view h5 {
+#confirmation-details h5{
 	color: white;
 }
 
