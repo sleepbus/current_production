@@ -21,46 +21,48 @@
 	</div>
 	<div class="error-holder"></div>
 	<div class="form-area">
-			<form action="*" class="trip-details-form">
-				<div class="form-group">
-					<!-- <label for="number_of_adults">How many adults are going?</label> -->
-					<p class="help-block">How many adults are going?</p>
-					<select name="number_of_adults" class="number_of_adults form-control">
-				  	<option value="1">1 Adult</option>
-				  	<option value="2">2 Adults</option>
-				  	<option value="3">3 Adults</option>
-				  	<option value="4">4 Adults</option>
-				  	<option value="5">5 Adults</option>
-				  	<option value="6">6 Adults</option>
-				  	<option value="7">7 Adults</option>
-				  	<option value="8">8 Adults</option>
-				  	<option value="9">9 Adults</option>
-				  	<option value="10">10 Adults</option>
-				  	<option value="11">11 Adults</option>
-				  	<option value="12">12 Adults</option>
-					</select>
-				</div>
-				<div class="form-group">
-						<p class="help-block">Depart from <span class="depart-city" data-city-id="1">San Francisco, CA</span></p>
-							<input type="" readonly="true" name="depart-date" id="" class="form-control datepicker depart-date" style="display: none;">
-						<div class="center hide">
-							<img src="/svgs/loading_svg.svg" alt="loading gif" class="datepicker-loading">
-						</div>
-				</div>
-				<div class="form-group return-date-select">
-					<p class="help-block">Return from <span class="return-city" data-city-id="2">Los Angeles, CA</span></p>
-						<input type="" readonly="true" name="arrive-date" id="" class="form-control datepicker return-date" style="display: none; position: relative;">
-						<div class="center hide">
-							<img src="/svgs/loading_svg.svg" alt="loading gif" class="datepicker-loading">
-						</div>
-				</div>
-			<div class="center">
-					<p class="help-block departure-notice">All buses depart at 11:00pm and arrive <br> at their destination by 6:00am the next day</p>
-					<div class="form-submit-holder">
-						<input type="submit" data-trip-type="round" class="trip-details btn btn-success btn-lg btn-block form-submit" value="Book now for $130">
-					</div>
-			</div>
-			</form>
+    <form action="*" class="trip-details-form">
+      <div class='trip-info-inputs'>
+        <div class="form-group">
+          <!-- <label for="number_of_adults">How many adults are going?</label> -->
+          <p class="help-block">How many adults are going?</p>
+          <select name="number_of_adults" class="number_of_adults form-control">
+            <option value="1">1 Adult</option>
+            <option value="2">2 Adults</option>
+            <option value="3">3 Adults</option>
+            <option value="4">4 Adults</option>
+            <option value="5">5 Adults</option>
+            <option value="6">6 Adults</option>
+            <option value="7">7 Adults</option>
+            <option value="8">8 Adults</option>
+            <option value="9">9 Adults</option>
+            <option value="10">10 Adults</option>
+            <option value="11">11 Adults</option>
+            <option value="12">12 Adults</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <p class="help-block">Depart from <span class="depart-city" data-city-id="1">San Francisco, CA</span></p>
+            <input type="" readonly="true" name="depart-date" id="" class="form-control datepicker depart-date" style="display: none;">
+          <div class="center">
+            <img src="/svgs/loading_svg.svg" alt="loading gif" class="datepicker-loading">
+          </div>
+        </div>
+        <div class="form-group return-date-select">
+          <p class="help-block">Return from <span class="return-city" data-city-id="2">Los Angeles, CA</span></p>
+            <input type="" readonly="true" name="arrive-date" id="" class="form-control datepicker return-date" style="display: none; position: relative;">
+            <div class="center">
+              <img src="/svgs/loading_svg.svg" alt="loading gif" class="datepicker-loading">
+            </div>
+        </div>
+      </div>
+      <div class="center">
+        <p class="help-block departure-notice">All buses depart at 11:00pm and arrive <br> at their destination by 6:00am the next day</p>
+        <div class="form-submit-holder">
+          <input type="submit" data-trip-type="round" class="trip-details btn btn-success btn-lg btn-block form-submit" value="Book now for $130">
+        </div>
+      </div>
+    </form>
 	</div>
 	<div class="confirmation-view"></div>
 </div>
