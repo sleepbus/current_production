@@ -18,7 +18,7 @@
 
 <div class="container-fluid homepage-info-container landing-block">
 	<% info_array.each_with_index do |info_hash, index| %>
-		<% if index % 2 != 0 %>
+		<% if index % 2 == 0 %>
 			<div class="row simple-flex info-<%= index %>">
 				<%= erb :info_image, :locals => {base_image_url: info_hash["base_image_url"], srcset_image_urls: info_hash["srcset_image_ulrs"]} %>
 				<%= erb :info_text, :locals => {info_hash: info_hash, index: index} %>

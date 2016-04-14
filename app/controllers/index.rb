@@ -1,13 +1,6 @@
 get "/" do
 	page_information = info_array = [
 		{
-			"header" 			=> "Wake up in <br> Los Angeles",
-			"sub-header" 	=> "SleepBus has nightly non-stop <br> trips between Los Angeles, CA <br> and San Francisco, CA",
-			"button" 			=> "false",
-			"base_image_url"	=> "/images/sample-checkout.jpg",
-			"srcset_image_ulrs" => ""
-		},
-		{
 			"header" 			=> "Book Any <br> Ticket for $48",
 			"sub-header" 	=> "<br>",
 			# old text: Whether you book 10 months <br> before or 10 minutes before the <br> price never changes
