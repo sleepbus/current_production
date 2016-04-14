@@ -27,5 +27,4 @@ end
 group :test, :development do
 	gem 'hirb'
   gem 'factory_girl'
-  
 end
