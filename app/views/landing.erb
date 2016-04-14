@@ -1,5 +1,5 @@
 <%= erb :follow_nav %>
-<div id="switch-follow-nav-waypoint"></div> 
+<div id="switch-follow-nav-waypoint"></div>
 <!-- Id is later switched to hide-follow-nav-waypoint -->
 <div id="follow-nav" class="container-fluid base-head">
 	<div class="row">
@@ -33,9 +33,9 @@
 
 	<div class="row amenities landing-block">
 		<hr class="no-display-mobile">
-			<% amenities_array.each do |amenitie_hash| %>
-				<%= erb :amenities, :locals => {amenitie_hash: amenitie_hash} %>
-			<% end %>
+    <% amenities_array.each do |amenitie_hash| %>
+      <%= erb :amenities, :locals => {amenitie_hash: amenitie_hash} %>
+    <% end %>
 	</div>
 	<div class="row fhq landing-block">
 		<% fhq_array.each do |fhq| %>
@@ -52,9 +52,3 @@
 <footer>
 	<%= erb :footer %>
 </footer>
-<div class="modal">
-	<i class="icon-close modal-close"></i>
-	<div class="modal-panel">
-		<%= erb :trip_form  %>
-	</div>
-</div>

@@ -304,8 +304,9 @@ startListeners = function(){
 
 	$(document).on("click", ".book-trip, .mobile-book-trip, .book-trip-no-disappear", function(event){
 		event.preventDefault();
-		//if (isMobile.matches){ // if mobile we load a new page if desktop its ajaxed into a modal
-			window.location.href = "/begin-checkout";
+	  window.location.href = "/begin-checkout";
+		//  if (isMobile.matches){ // if mobile we load a new page if desktop its ajaxed into a modal
+		//  window.location.href = "/begin-checkout";
 		//} else {
 		//	$(".modal").css("display", "flex");
 		//}
