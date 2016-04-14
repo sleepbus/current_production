@@ -701,7 +701,7 @@ Forms styling
   height: 80px;
 }
 
-.home-form .direction-selection i.icon-loop{
+.home-form .direction-selection i{
   position: absolute;
   top: 30px;
 }
