@@ -686,9 +686,27 @@ Forms styling
 .home-form .checkout-holder{
   background: linear-gradient(-180deg, #676767 0%, #383838 100%);
   width: 320px;
+  font-weight: 300;
   border-radius: 9px;
   -webkit-border-radius: 9px;
   -moz-border-radius: 9px;
+}
+
+.home-form .checkout-holder .help-block{
+  letter-spacing: .5px;
+  margin-bottom: 5px;
+}
+
+.home-form .form-submit-holder{
+  width: 100%;
+}
+
+.home-form .form-submit-holder input{
+  font-weight: 300;
+}
+
+.home-form .checkout-holder .departure-notice{
+  color: #A9A9A9;
 }
 
 .home-form .checkout-holder .direction-selection {
@@ -717,6 +735,10 @@ Forms styling
 
 .home-form .direction-selection .direction-selection-icon {
   font-size: 20px;
+}
+
+.home-form .form-submit-holder{
+  margin-top: 30px;
 }
 
 /*************************************
