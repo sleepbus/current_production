@@ -94,16 +94,16 @@ var View = {
 	updateAvailableDates: function(departTrips, returnTrips){
 		var departDates = departTrips.map(function (trip) {return trip.depart_date})
 		var returnDates = returnTrips.map(function (trip) {return trip.depart_date})// map to get the available dates for each direction of travel.
-		$("#depart-date").datepicker("destroy");
-		$('#depart-date').datepicker({
+		$(".depart-date").datepicker("destroy");
+		$('.depart-date').datepicker({
 		    beforeShowDay: function(date){
 		        var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
 		        return [departDates.indexOf(formatedDate) != -1]
 		    },
 		    minDate: 0
 		});
-		$("#return-date").datepicker("destroy");
-		$('#return-date').datepicker({
+		$(".return-date").datepicker("destroy");
+		$('.return-date').datepicker({
 		    beforeShowDay: function(date){
 		        var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
 		        return [returnDates.indexOf(formatedDate) != -1]
@@ -168,11 +168,11 @@ var View = {
 		$(".return-city").attr("data-city-id", orginal_depart_id);
 	},
 
-	getTripDetailsFormInfo: function(callback, tripType){
+	getTripDetailsFormInfo: function(formObj, callback, tripType){
 		var tripData = {};
-		tripData["depart-date"] = $("#depart-date").val();
-		tripData["return-date"] = $("#return-date").val();
-		tripData["number_of_adults"] = $(".number_of_adults").val();
+    tripData["depart-date"] = formObj.find('input.depart-date').val();
+    tripData["return-date"] = formObj.find('input.return-date').val();
+		tripData["number_of_adults"] = formObj.find(".number_of_adults").val();
 		tripData["departCityID"] = $(".depart-city").attr("data-city-id");
 		tripData["arriveCityID"] = $(".return-city").attr("data-city-id");
 		event.preventDefault();
@@ -225,9 +225,9 @@ startListeners = function(){
 	$(".trip-details-form").submit(function(event){
 		var tripType = $(".trip-details").attr("data-trip-type");
 		if (tripType == "round") {
-			View.getTripDetailsFormInfo(Model.sendRoundTripDetails, tripType); // gets the data from the form then sends it as a param to the callback
+			View.getTripDetailsFormInfo($(this), Model.sendRoundTripDetails, tripType); // gets the data from the form then sends it as a param to the callback
 		} else {
-			View.getTripDetailsFormInfo(Model.sendOneWayTripDetails, tripType); //
+			View.getTripDetailsFormInfo($(this), Model.sendOneWayTripDetails, tripType); //
 		}
 	});
 
