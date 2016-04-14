@@ -3,7 +3,7 @@ get "/begin-checkout" do
 end
 
 post "/trips/round" do
-	begin 
+	begin
 		content_type :json
 
 	 	trip = Trip.find_by(
@@ -29,14 +29,14 @@ post "/trips/round" do
 			status 406
 			return "Sorry Doesn't look like we have any more seats available on that route".to_json
 		end
-	rescue ActiveRecord::ConnectionTimeoutError => e 
+	rescue ActiveRecord::ConnectionTimeoutError => e
 		puts e
 	end
 
 end
 
 post "/trips/oneway" do
-	begin 
+	begin
 		trip = Trip.find_by(
 				depart_date: Date.strptime(params["depart-date"], "%m/%d/%Y"),
 				depart_city_id: params["departCityID"],
@@ -54,13 +54,13 @@ post "/trips/oneway" do
 			# status 406
 			# return "Sorry Doesn't look like we have any more seats available on that route".to_json
 		end
-	rescue g=> e 
+	rescue g=> e
 		puts e
 	end
 end
 
 get "/trips/availability" do
-	begin 
+	begin
 		num_passengers = params["number_of_adults"].to_i
 		depart_trips = Trip.where(depart_city_id: params["depart_city_id"], depart_date: Date.today..Date.today.to_time.advance(:months => 2).to_date)
 		if depart_trips.length > 0
@@ -69,13 +69,13 @@ get "/trips/availability" do
 			end
 		end
 		return_trips = Trip.where(depart_city_id: params["return_city_id"], depart_date: Date.today..Date.today.to_time.advance(:months => 2).to_date)
-		
+
 		if return_trips.length > 0
 			return_trips = return_trips.reject do |trip_ob|
-				num_passengers > trip_ob.seats_left 
+				num_passengers > trip_ob.seats_left
 			end
 		end
-	rescue ActiveRecord::ConnectionTimeoutError => e 
+	rescue ActiveRecord::ConnectionTimeoutError => e
 		puts e
 	end
 

@@ -39,10 +39,10 @@ var Model = {
 	getAvailableDatesForXAdults: function(number_of_adults, depart_city_id, return_city_id){
 		$.ajax({
 			url: "/trips/availability",
-			method: "GET", 
+			method: "GET",
 			data: {
-				number_of_adults: number_of_adults, 
-				depart_city_id: depart_city_id, 
+				number_of_adults: number_of_adults,
+				depart_city_id: depart_city_id,
 				return_city_id: return_city_id
 			}
 		}).done(function(response){
@@ -86,7 +86,7 @@ var View = {
 	removeCityToggle: function(){
 		$(".direction-selection-holder").remove()
 	},
-	
+
 	displayFormError: function(message){
 		$(".error-holder").html(message).css("display", "block")
 	},
@@ -215,7 +215,7 @@ startListeners = function(){
 	// $(document).on("click", ".div-line-text", function(){ // $(document) selector has to be used for ajaxed in html
 		// View.toggleToFromCities() // switches the user seeable text for the cities also updates the data-city-id for both .depart-city and .return-city
 		// Model.getAvailableDatesForXAdults(
-			// $('.number_of_adults').val(), 
+			// $('.number_of_adults').val(),
 			// $(".depart-city").attr("data-city-id"),
 			// $(".return-city").attr("data-city-id")
 		// )
@@ -235,7 +235,7 @@ startListeners = function(){
 
 
 	$('.number_of_adults').change(function(event){
-		
+
 		View.updatePriceInSubmitText($(this).val(), $(".trip-details").attr("data-trip-type"));
 		Model.getAvailableDatesForXAdults(
 			$(this).val(),
@@ -260,8 +260,8 @@ startListeners = function(){
 		event.preventDefault();
 		Model.sendStripPaymentDetails($(this).serializeArray()); // sends stripe form data to /stripe/charge
 	});
-	
-	
+
+
 	$('input, select, textarea').bind('focus blur', function(event) {
 		var $viewportMeta = $('meta[name="viewport"]');
 		$viewportMeta.attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type == 'blur' ? 10 : 1));
