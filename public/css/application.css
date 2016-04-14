@@ -331,22 +331,31 @@ Landing Main
 	font-size: 45px;
 	color: #505050;
 	line-height: 40px;
+  letter-spacing: 2px;
+}
+
+.info-text-lg span.thin{
+  font-weight: 300;
 }
 
 .info-text-sm {
 	/* SleepBus has nightly: */
 	font-family: 'Lato', sans-serif;
-	font-size: 22px;
+  font-size: 17px;
 	color: #505050;
-	line-height: 32px;
+	line-height: 25px;
 }
 
 .homepage-text-flex-box .scroll-down{
 	/* Scroll Down to Learn: */
 	font-family: 'Lato', sans-serif;
-	font-size: 14px;
+	font-size: 13px;
 	color: #505050;
-	line-height: 32px;
+  margin-top: 40px;
+}
+
+.homepage-text-flex-box .scroll-down img{
+  margin-right: 10px;
 }
 
 .info-img img {
