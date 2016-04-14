@@ -605,17 +605,24 @@ Forms styling
 	align-items: center;
 	align-content: center;
 	justify-content: center;
+  padding: 15px;
 }
 
 .trip-type div {
 	background: none;
 	border-color: none;
 	color: white;
+  padding: 7px 16px;
+  font-size: 15px;
+  width: 140px;
+  font-weight: 300;
 }
 
-#roundtrip {
-
+.trip-type div:first-child{
+  margin-right: 10px;
 }
+
+#roundtrip {}
 
 .trip-type .selected {
 	background: rgb(65, 134, 247);
@@ -624,7 +631,6 @@ Forms styling
 .trip-type .non-selected:hover {
 	background: rgba(40, 114, 227, 0.8);
 }
-
 
 .direction-selection {
 	width: 70%;
@@ -639,10 +645,14 @@ Forms styling
 	flex-wrap: nowrap;
 	align-items: center;
 	align-content: center;
-	border: 3px solid gray;
+	border: 1px solid gray;
 	color: white;
 	font-size: 45px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
+
 .direction-selection div {
 	margin: 10%;
 }
@@ -669,7 +679,33 @@ Forms styling
 	overflow: auto;
 }
 
+.selection-holder{
+  padding-bottom: 25px;
+}
 
+.home-form .checkout-holder{
+  background: linear-gradient(-180deg, #676767 0%, #383838 100%);
+  width: 320px;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+}
+
+.home-form .checkout-holder .direction-selection {
+  width: 90%;
+}
+
+.home-form .direction-selection div {
+  margin: 5%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 65px;
+  font-weight: 300;
+}
+
+.home-form .direction-selection .direction-selection-icon {
+  font-size: 20px;
+}
 
 /*************************************
 Confirmation Page
