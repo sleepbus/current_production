@@ -695,12 +695,24 @@ Forms styling
   width: 90%;
 }
 
+.home-form .selection-holder {
+  position: relative;
+  width: 20px;
+  height: 80px;
+}
+
+.home-form .direction-selection i.icon-loop{
+  position: absolute;
+  top: 30px;
+}
+
 .home-form .direction-selection div {
   margin: 5%;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 65px;
   font-weight: 300;
+  padding: 0px;
 }
 
 .home-form .direction-selection .direction-selection-icon {
