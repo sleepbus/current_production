@@ -477,8 +477,15 @@ Landing Main
 .no-display-mobile {
 	display: block;
 }
+
 .talk-with-tom {
 	white-space: nowrap;
+  font-size: 40px;
+  text-align: center;
+}
+
+.talk-with-tom .question{
+  font-size: 50px;
 }
 
 .chat-with-tom {
@@ -633,7 +640,15 @@ Landing Main
     max-width: 45%;
 	}
 
+  .talk-with-tom {
+    white-space: nowrap;
+    font-size: 25px;
+    text-align: center;
+  }
 
+  .talk-with-tom .question{
+    font-size: 27px;
+  }
 
 }
 /**************************************
