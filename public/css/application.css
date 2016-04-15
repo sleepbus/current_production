@@ -360,6 +360,8 @@ Landing Main
   margin-right: 10px;
 }
 
+.col-sm-6{ padding-left: 60px; }
+
 .info-img{
   text-align: center;
 }
@@ -492,6 +494,7 @@ Landing Main
 }
 
 @media (max-width: 765px) {
+  .col-sm-6{ padding-left: 0px; }
 	.text-block {
   	/*padding: 12% 0; */
   }
