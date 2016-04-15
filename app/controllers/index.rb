@@ -2,11 +2,11 @@ get "/" do
 	page_information = info_array = [
 		{
 			"header" 			=> "Book Any <br> Ticket for $48",
-			"sub-header" 	=> "<br>",
+			"sub-header" 	=> "Whether you book 10 months before or 10 minutes before, the price never changes.",
 			# old text: Whether you book 10 months <br> before or 10 minutes before the <br> price never changes
 			"button" => "true",
-			"base_image_url"	=> "/images/PHONE@2x.png",
-			"srcset_image_ulrs" => "/images/PHONE@2x_cut.png 765w"
+			"base_image_url"	=> "/images/PHONE.png",
+			"srcset_image_ulrs" => "/images/PHONE@2x.png 765w"
 		},
 
 		{

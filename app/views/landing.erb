@@ -15,37 +15,8 @@
 	<!-- <img src="/images/LA.png" srcset="/images/LA@2x.png 2x" alt="LA skyline" class="skyline-background la-skyline "> -->
 
 <%= erb :home_row1 %>
+<%= erb :home_row2 %>
 
-<div class="container-fluid homepage-info-container landing-block">
-	<% info_array.each_with_index do |info_hash, index| %>
-		<% if index % 2 == 0 %>
-			<div class="row simple-flex info-<%= index %>">
-				<%= erb :info_image, :locals => {base_image_url: info_hash["base_image_url"], srcset_image_urls: info_hash["srcset_image_ulrs"]} %>
-				<%= erb :info_text, :locals => {info_hash: info_hash, index: index} %>
-			</div>
-		<% else %>
-			<div class="row simple-flex flex-reverse-wrap info-<%= index %>">
-				<%= erb :info_text, :locals => {info_hash: info_hash, index: index} %>
-				<%= erb :info_image, :locals => {base_image_url: info_hash["base_image_url"], srcset_image_urls: info_hash["srcset_image_ulrs"]} %>
-			</div>
-		<% end %>
-	<% end %>
-
-	<div class="row amenities landing-block">
-		<hr class="no-display-mobile">
-    <% amenities_array.each do |amenitie_hash| %>
-      <%= erb :amenities, :locals => {amenitie_hash: amenitie_hash} %>
-    <% end %>
-	</div>
-	<div class="row fhq landing-block">
-		<% fhq_array.each do |fhq| %>
-			<%= erb :fhq, :locals => {question: fhq["question"], answer: fhq["answer"]} %>
-		<% end %>
-	</div>
-	<div class="row talk-with-tom">
-		<%= erb :chat %>
-	</div>
-</div>
 <!-- <div class="la-background-image-holder background-image-holder">
 	<div class="skyline-background la-skyline"></div>
 </div> -->

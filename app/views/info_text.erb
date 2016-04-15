@@ -1,20 +1,16 @@
 <div class="col-sm-6 text-block">
-	<div class="homepage-flex-box-container">
-		<div class="homepage-text-flex-box">
-			<div class="info-text-lg">
-				<%= info_hash["header"] %>
-			</div>
-			<div class="info-text-sm"><%= info_hash["sub-header"] %></div>
-			<% if info_hash["button"] == "true" %>
-				<div><button class="book-trip btn btn-lg"> Book a Trip Now</button></div>
-			<% elsif index == 0 %>
-				<div class="scroll-down">
-					<img src="/svgs/MOUSE.svg" alt="Scroll down to learn more"> Scroll Down to Learn More
-				</div>
-				<div><button class="mobile-book-trip btn btn-success btn-lg"> Book Now</button></div>
-			<% end %>
-		</div>
-	</div>
+  <div class="info-text-lg">
+    <%= info_hash["header"] %>
+  </div>
+  <div class="info-text-sm"><%= info_hash["sub-header"] %></div>
+  <% if info_hash["button"] == "true" %>
+    <div><button class="book-trip btn btn-lg"> Book a Trip Now</button></div>
+  <% elsif index == 0 %>
+    <div class="scroll-down">
+      <img src="/svgs/MOUSE.svg" alt="Scroll down to learn more"> Scroll Down to Learn More
+    </div>
+    <div><button class="mobile-book-trip btn btn-success btn-lg"> Book Now</button></div>
+  <% end %>
 	<hr class="mobile-hr-display">
 </div>
 
