@@ -366,6 +366,7 @@ Landing Main
 
 .info-img img {
   width: 65%;
+  min-width: 270px;
 }
 
 .info-0 {
