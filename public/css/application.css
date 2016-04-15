@@ -984,8 +984,8 @@ Background Image Styling
 Footer
 *************************************/
 .footer {
-	background: rgb(29, 36, 49);
-	height: 50px;
+  background: #273140;
+	height: 100px;
 	color: white;
 	display: -webkit-box;
   display: -moz-box;
@@ -996,6 +996,8 @@ Footer
 	align-content: center;
 	justify-content: center;
 	flex-wrap: wrap;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 
 /*.footer-options {
@@ -1010,4 +1012,4 @@ Footer
 .footer-options a {
 	font-style: none;
 	color: white;
-}/
+}
