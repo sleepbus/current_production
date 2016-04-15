@@ -446,7 +446,7 @@ Landing Main
 }
 
 .fhq {
-	margin: 0 -6% 0 0;
+	margin: 50px -6% 0 0;
 }
 
 .fhq-question {
@@ -492,11 +492,30 @@ Landing Main
 	margin: 5% auto;
 }
 
+.map-row iframe{
+  width: 100%;
+}
+
+.map-row .map-title{
+  padding-bottom: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+
 @media (min-width: 766px) {
   .col-sm-6{ padding-left: 60px; }
+
 	.mobile-book-trip {
  		display: none;
  	}
+
+  .map-row .map-text{
+    margin-top: 100px;
+  }
+
+  .map-row{
+    margin-top: 100px;
+  }
 }
 
 @media (max-width: 765px) {
@@ -650,6 +669,13 @@ Landing Main
     font-size: 27px;
   }
 
+  .map-row .map-title{
+    padding-bottom: 20px;
+  }
+
+  .map-row{
+    margin-bottom: 50px;
+  }
 }
 /**************************************
 Forms styling
