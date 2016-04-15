@@ -385,6 +385,14 @@ Landing Main
   padding-top: 50px !important;
 }
 
+.info-0 img.phone-short{
+  display: none;
+}
+
+.info-1 button.book-trip{
+  display: none;
+}
+
 
 .book-trip {
 	background-image: -webkit-linear-gradient( #1299F5 1%, #1173F0 100%);
@@ -429,7 +437,7 @@ Landing Main
 	color: #505050;
 	line-height: 32px;
 	color: gray;
-
+  margin-top: 80px;
 }
 
 .amenitie i {
@@ -460,19 +468,12 @@ Landing Main
 	padding: 2%;
 }
 
-
-
 .chat-box {
 	border: 2px solid rgba(59, 59, 59, 0.3);
 	border-radius: 10px;
 	padding: 6% 0;
 }
 
-
-.info-0 {
-	/*background-image: url("/images/SF.png");*/
-	/*margin: 0 auto 5% auto;*/
-}
 .no-display-mobile {
 	display: block;
 }
@@ -492,8 +493,7 @@ Landing Main
 
 @media (max-width: 765px) {
 	.text-block {
-  	padding: 12% 0;
- 		width: 100%;
+  	/*padding: 12% 0; */
   }
 
 	.homepage-flex-box-container {
@@ -501,10 +501,41 @@ Landing Main
 		width: 100%;
 	}
 
+  .home-form{ display: none; }
+
+  .text-block{ padding-top: 40px; }
+
+  .info-text-lg{
+    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .info-text-sm{
+    margin: 0px auto;
+  }
+
+  .info-top button.book-trip{
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 35px;
+    width: 100%;
+  }
+
+  .info-top .mobile-hr-display{
+    display: none;
+  }
+
+  .info-0 img.phone-short{
+    display: block;
+  }
+
+  .info-0 img.phone-tall{
+    display: none;
+  }
+
 	.mobile-hr-display {
 		display: block;
-/*		width: 200%;
-  	margin-left: -50%*/
 	}
 
 	.no-display-mobile {
@@ -528,11 +559,6 @@ Landing Main
 
 	.scroll-down {
 		display: none;
-	}
-
-
-	.info-0 img {
-	display: none;
 	}
 
 	.info-img img {
@@ -762,6 +788,7 @@ Forms styling
 .home-form .direction-selection i{
   position: absolute;
   top: 30px;
+  left: 0px;
 }
 
 .home-form .direction-selection div {
