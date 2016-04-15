@@ -815,7 +815,7 @@ Forms styling
   height: 40px;
 }
 
-.home-form .checkout-holder .help-block{
+.home-form .checkout-holder .help-block, .mobile-trip-form  .checkout-holder .help-block{
   letter-spacing: .5px;
   margin-bottom: 5px;
 }
@@ -828,27 +828,29 @@ Forms styling
   font-weight: 300;
 }
 
-.home-form .checkout-holder .departure-notice{
+.home-form .checkout-holder .departure-notice, .mobile-trip-form .departure-notice{
   color: #A9A9A9;
+  font-size: 12px;
+  text-align: center !important;
 }
 
-.home-form .checkout-holder .direction-selection {
+.home-form .checkout-holder .direction-selection, .mobile-trip-form .checkout-holder .direction-selection{
   width: 90%;
 }
 
-.home-form .selection-holder {
+.home-form .selection-holder, .mobile-trip-form .selection-holder {
   position: relative;
   width: 20px;
   height: 80px;
 }
 
-.home-form .direction-selection i{
+.home-form .direction-selection i, .mobile-trip-form .direction-selection i{
   position: absolute;
   top: 30px;
   left: 0px;
 }
 
-.home-form .direction-selection div {
+.home-form .direction-selection div, .mobile-trip-form .direction-selection div {
   margin: 5%;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -857,7 +859,11 @@ Forms styling
   padding: 0px;
 }
 
-.home-form .direction-selection .direction-selection-icon {
+.home-form .help-block{
+  text-align: left;
+}
+
+.home-form .direction-selection .direction-selection-icon, .mobile-trip-form .direction-selection .direction-selection-icon{
   font-size: 20px;
 }
 

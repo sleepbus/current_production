@@ -10,12 +10,13 @@
 	}
   .back-links{ padding: 5%; }
   .back-links a{ color: #C3C3C3; }
+  .checkout-holder{ max-width: 400px; margin: 0px auto; }
 </style>
 <div class="back-links">
  <a href='#' id='trip-details-back' style='display:none;'>< Back to Trip Info</a>
  <a href='#' id='passenger-details-back' style='display:none;'>< Back to Guest Info</a>
 </div>
-<div class="checkout-holder">
+<div class="checkout-holder mobile-trip-form">
 	<div class="direction-selection-holder">
 		<div class="trip-type center">
 			<div id="roundtrip" class="round btn btn-lg selected">
@@ -27,13 +28,8 @@
 		</div>
 		<div class="direction-selection">
 			<div>SF</div>
-			<div><i class="icon-loop direction-selection-icon"></i></div>
+			<div class='selection-holder'><i class="icon-loop direction-selection-icon" id='switch'></i></div>
 			<div>LA</div>
-		</div>
-		<div class="div-line">
-      <span id="switch" class="div-line-text">
-        Switch
-      </span>
 		</div>
 	</div>
 	<div class="error-holder">
@@ -74,10 +70,10 @@
           </div>
 				</div>
 			<div class="center">
-					<p class="help-block">All buses depart at 11:00pm and arrive <br> at their destination by 6:00am the next day</p>
-					<div class="form-submit-holder">
-						<input type="submit" data-trip-type="round" class="trip-details btn btn-success btn-lg btn-block form-submit" value="Book now for $130">
-					</div>
+        <p class="help-block departure-notice">All buses depart at 11:00pm and arrive <br> at their destination by 6:00am the next day</p>
+        <div class="form-submit-holder">
+          <input type="submit" data-trip-type="round" class="trip-details btn btn-success btn-lg btn-block form-submit" value="Book now for $130">
+        </div>
 			</div>
 			</form>
     </div>
