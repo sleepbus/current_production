@@ -19,6 +19,7 @@ require 'stripe'
 require "sinatra/reloader" if development?
 require "sinatra/cross_origin"
 require 'erb'
+require 'hirb'
 require 'dotenv'
 Dotenv.load
 # Some helper constants for path-centric logic

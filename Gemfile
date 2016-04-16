@@ -16,6 +16,7 @@ gem "stripe"
 gem "dotenv"
 gem "bcrypt"
 gem 'faker'
+gem 'hirb'
 
 group :test do
   gem 'shoulda-matchers'
