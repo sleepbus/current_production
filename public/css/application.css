@@ -441,6 +441,10 @@ Landing Main
   margin-top: 80px;
 }
 
+.amenitie img#coffee{
+  height: 45px;
+}
+
 .amenitie i {
 	color: #1080F2;
 	font-size: 30px;
