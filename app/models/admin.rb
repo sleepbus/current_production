@@ -1,3 +1,12 @@
+# == Schema Information
+#
+# Table name: admins
+#
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  password_hash :string(255)
+#
+
 class Admin < ActiveRecord::Base
   def password
     @password ||= Password.new(password_hash)

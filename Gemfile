@@ -29,3 +29,7 @@ group :test, :development do
 	gem 'hirb'
   gem 'factory_girl'
 end
+
+group :development do
+  gem 'annotate'
+end

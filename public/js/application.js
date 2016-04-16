@@ -86,22 +86,36 @@ var View = {
 		$(".depart-date").datepicker("destroy");
 		$('.depart-date').datepicker({
 		    beforeShowDay: function(date){
-		        var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
-		        return [departDates.indexOf(formatedDate) != -1]
+            return [View.isDayAvailable(departDates, date)];
 		    },
 		    minDate: 0
 		});
 		$(".return-date").datepicker("destroy");
 		$('.return-date').datepicker({
 		    beforeShowDay: function(date){
-		        var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
-		        return [returnDates.indexOf(formatedDate) != -1]
+            return [View.isDayAvailable(returnDates, date)];
 		    },
 		    minDate: 0
 
 		});
 		View.toggleDatePickerLoading();
 	},
+
+  isDayAvailable: function(availableDates, date){
+    var d = new Date(date);
+    var day = d.getDate();
+    var month = d.getMonth();
+    if (month >= 4){ //show dates after may 3rd as available for now
+      if (month == 4 && day < 3){
+        return false
+      } else {
+        return true;
+      }
+    } else {
+      var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
+      return availableDates.indexOf(formatedDate) != -1;
+    }
+  },
 
 	updatePriceInSubmitText:  function(numPassengers, tripType){
 		var price = 1;
