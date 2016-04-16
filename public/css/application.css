@@ -450,6 +450,13 @@ Landing Main
 	font-size: 30px;
 }
 
+.column-title{
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .fhq {
 	margin: 50px -6% 0 0;
 }
@@ -458,6 +465,7 @@ Landing Main
 	font-size: 16px;
 	color: #505050;
 	line-height: 24px;
+  font-weight: bold;
 }
 
 .fhq-answer {
