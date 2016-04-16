@@ -613,6 +613,7 @@ Landing Main
 
 	.info-img img {
  		width: 100%;
+    min-width: 0px;
 	}
 
  .homepage-info-container > * {
@@ -683,7 +684,6 @@ Landing Main
 	}
 
   .talk-with-tom {
-    white-space: nowrap;
     font-size: 25px;
     text-align: center;
   }
