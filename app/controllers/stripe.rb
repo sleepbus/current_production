@@ -1,5 +1,4 @@
 post "/stripe/charge" do
-
   begin
       customer = Stripe::Customer.create(
         :email => params["stripeEmail"],

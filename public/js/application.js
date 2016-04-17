@@ -355,10 +355,21 @@ function photoGalleryInit(){
   })
 }
 
+function fakeTicketInit(){
+  $('#fPayModal').on('show.bs.modal', function() {
+		$.ajax({
+			url: "/fake_tickets",
+			method: "POST",
+			dataType: "json"
+		})
+  })
+}
+
 paginit = function(){
 	isMobile = window.matchMedia("only screen and (max-width: 760px)");
 	View.setUpLanding();
 	startListeners();
   formBackLinkInit();
   photoGalleryInit();
+  fakeTicketInit();
 }

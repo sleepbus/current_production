@@ -7,6 +7,7 @@ post "/passengers" do
 
     if trip_ids.first == 0 #this trip is after May 2nd and not available
       session[:fake_trip] = true
+      session[:fake_passenger_ids] = []
       params["passengersInfo"].each_key do |key|
         fake_passenger = FakePassenger.find_or_create_by({
           first_name: params["passengersInfo"][key]["0"]["value"],
@@ -14,7 +15,10 @@ post "/passengers" do
           phone_number: params["passengersInfo"][key]["2"]["value"],
           email: params["passengersInfo"][key]["3"]["value"]
         })
-        passengers << fake_passenger if fake_passenger.save
+        if fake_passenger.save
+          session[:fake_passenger_ids] << fake_passenger.id
+          passengers << fake_passenger
+        end
       end
     else
       session[:fake_trip] = false

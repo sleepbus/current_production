@@ -10,4 +10,5 @@
 #
 
 class FakePassenger < ActiveRecord::Base
+  has_many :fake_tickets
 end
