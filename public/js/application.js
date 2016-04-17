@@ -169,7 +169,18 @@ var View = {
 		var orginal_depart_id = $(".depart-city").attr("data-city-id");
 		$(".depart-city").attr("data-city-id", $(".return-city").attr("data-city-id"));
 		$(".return-city").attr("data-city-id", orginal_depart_id);
+
+    View.updateToggleDestinationText(orginal_depart_name);
 	},
+
+  updateToggleDestinationText: function(original_depart_name){
+    var toggle = $('#switch');
+    if(original_depart_name == 'San Francisco, CA'){
+      toggle.text('Change destination to LA')
+    } else {
+      toggle.text('Change destination to SF')
+    }
+  },
 
 	getTripDetailsFormInfo: function(formObj, callback, tripType){
 		var tripData = {};

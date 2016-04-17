@@ -823,8 +823,21 @@ Forms styling
   padding-bottom: 25px;
 }
 
-.checkout-holder #switch{
+.direction-selection-holder{
+  text-align: center;
+}
+
+.checkout-holder a#switch{
   cursor: pointer;
+  text-decoration: none;
+}
+
+.checkout-holder a#switch:hover{
+  color: #459BE4 !important;
+}
+
+.checkout-holder a#switch:visited, .checkout-holder a#switch:active{
+  color: #337ab7;
 }
 
 .home-form .back-links{
@@ -840,7 +853,7 @@ Forms styling
 .home-form .checkout-holder{
   background: linear-gradient(-180deg, #676767 0%, #383838 100%);
   width: 320px;
-  height: 537px;
+  height: 554px;
   overflow-y: scroll;
   font-weight: 300;
   border-radius: 9px;
