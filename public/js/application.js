@@ -346,9 +346,19 @@ function formBackLinkInit(){
   })
 }
 
+function photoGalleryInit(){
+  $('img.preview-img').click(function(){
+    var thisSrc = $(this).prop('src');
+    $('#current-img').attr('src', thisSrc);
+    $('.active-img').removeClass('active-img');
+    $(this).parent().addClass('active-img');
+  })
+}
+
 paginit = function(){
 	isMobile = window.matchMedia("only screen and (max-width: 760px)");
 	View.setUpLanding();
 	startListeners();
   formBackLinkInit();
+  photoGalleryInit();
 }

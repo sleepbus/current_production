@@ -402,24 +402,54 @@ Landing Main
   margin-top: 0;
 }
 
-.info-1{
-  margin-top: 120px;
-}
-
-.info-1 .info-img{
-  text-align: left;
-}
-
-.info-1 .text-block{
-  padding-top: 50px !important;
-}
-
 .info-0 img.phone-short{
   display: none;
 }
 
-.info-1 button.book-trip{
+.bus-row{
+  margin-top: 120px;
+}
+
+.bus-row .info-img{
+  text-align: left;
+}
+
+.bus-row .text-block{
+  padding-top: 50px !important;
+}
+
+.bus-row button.book-trip{
   display: none;
+}
+
+.bus-row .info-img img#current-img{
+  width: 100% !important;
+  max-width: 450px !important;
+}
+
+.bus-row .col-sm-6:first-child{
+  padding-left: 20px !important;
+}
+
+.bus-row .img-previews div{
+  float: left;
+  vertical-align: top;
+  width: 80px;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.bus-row .img-previews .active-img, .bus-row .img-previews div:hover{
+  border: 1px solid #666;
+  border-radius: 4px;
+}
+
+.bus-row .img-previews div img{
+  width: 80px;
+  min-width: 0px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 
