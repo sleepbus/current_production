@@ -308,10 +308,10 @@ startListeners = function(){
 		//}
 	});
 
-	$(".modal-close").click(function(event){
-		event.preventDefault();
-		$(".modal").css("display", "none");
-	});
+	//$(".modal-close").click(function(event){
+		//event.preventDefault();
+		//$(".modal").css("display", "none");
+	//});
 };
 
 $(document).ready(function() {

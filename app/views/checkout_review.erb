@@ -1,17 +1,46 @@
 <div class="checkout-review">
-	<% trips.each do |trip| %>
-		<div class="depart-city-review">
-				<h4>
-					<%= City.find(trip.depart_city_id).name %> to <%= City.find(trip.end_city_id).name %>
-				</h4>
-				<h5>
-					Departure: <%= trip.depart_date %> @11pm
-				</h5>
-				<h5>
-					Arrival: <%= trip.arrive_date %> by 6am
-				</h5>
-		</div>
-	<% end %>
+  <% if session[:fake_trip] == true %>
+    <div class="depart-city-review">
+      <h4>
+        <%= City.find(session[:depart_city_id]).name %> to <%= City.find(session[:return_depart_city_id]).name %>
+      </h4>
+      <h5>
+        <% depart_d = Date.strptime(session[:depart_date], "%m/%d/%Y") %>
+        Departure: <%= depart_d %> @11pm
+      </h5>
+      <h5>
+        Arrival: <%= depart_d.tomorrow %> by 6am
+      </h5>
+    </div>
+    <% if session[:round_trip] == true %>
+      <div class="depart-city-review">
+        <h4>
+          <%= City.find(session[:return_depart_city_id]).name %> to <%= City.find(session[:depart_city_id]).name %>
+        </h4>
+        <h5>
+          <% depart_d = Date.strptime(session[:return_depart_date], "%m/%d/%Y") %>
+          Departure: <%= depart_d %> @11pm
+        </h5>
+        <h5>
+          Arrival: <%= depart_d.tomorrow %> by 6am
+        </h5>
+      </div>
+    <% end %>
+  <% else %>
+    <% trips.each do |trip| %>
+      <div class="depart-city-review">
+        <h4>
+          <%= City.find(trip.depart_city_id).name %> to <%= City.find(trip.end_city_id).name %>
+        </h4>
+        <h5>
+          Departure: <%= trip.depart_date %> @11pm
+        </h5>
+        <h5>
+          Arrival: <%= trip.arrive_date %> by 6am
+        </h5>
+      </div>
+    <% end %>
+  <% end %>
 	<hr>
 	<% passengers.each_with_index do |passenger, index| %>
 		<h5>Guest <%=  (index + 1) %></h5>
@@ -20,12 +49,18 @@
 			<h5><%= passenger.phone_number %></h5>
 		<hr>
 	<% end %>
-<form action="/stripe/charge" method="post" class="stripe-payment-form">
- <input type="hidden" value="<%= passengers.length * trip_price_mutiplyer.to_i %>" name="cost">
-	  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-	          data-key="<%= settings.publishable_key %>"
-	          data-description="<%= passengers.length %> Sleepbus Ticket(s)"
-	          data-amount= "<%= passengers.length * trip_price_mutiplyer.to_i %>"
-	          data-locale="auto"></script>
-	</form>
+  <% if session[:fake_trip] == true %>
+    <button class='f-pay-btn' data-toggle="modal" data-target="#fPayModal">
+      <span style="display: block; min-height: 30px;">Pay with Card</span>
+    </button>
+  <% else %>
+    <form action="/stripe/charge" method="post" class="stripe-payment-form">
+      <input type="hidden" value="<%= passengers.length * trip_price_multiplier.to_i %>" name="cost">
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="<%= settings.publishable_key %>"
+              data-description="<%= passengers.length %> Sleepbus Ticket(s)"
+              data-amount= "<%= passengers.length * trip_price_multiplier.to_i %>"
+              data-locale="auto"></script>
+    </form>
+  <% end %>
 </div>

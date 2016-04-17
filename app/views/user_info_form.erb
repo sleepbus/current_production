@@ -8,37 +8,37 @@
 				<hr>
 				<p class="help-block">Adult <%= user_number + 1 %></p>
 				<!-- <label for="first_name">First Name:</label> -->
-				<input 
-					type="text" 
-					name= <%= "#{user_number}" + "_first_name"%> 
-					placeholder="First Name" 
+				<input
+					type="text"
+					name= <%= "#{user_number}" + "_first_name"%>
+					placeholder="First Name"
 					class="form-control"
 				>
 			</div>
 
-			<div class="form-group">	
+			<div class="form-group">
 				<!-- <label for="last_name">Last Name:</label> -->
-				<input 
-					type="text" 
-					name= <%= "#{user_number}" + "_last_name"%> 
+				<input
+					type="text"
+					name= <%= "#{user_number}" + "_last_name"%>
 					class="form-control"
-					placeholder="Last Name" 
+					placeholder="Last Name"
 				>
 			</div>
 			<div class="form-group">
 				<!-- <label for="email">Email:</label> -->
-				<input 
-					type="text" 
-					name= <%= "#{user_number}" + "_phone"%> 
+				<input
+					type="text"
+					name= <%= "#{user_number}" + "_phone"%>
 					placeholder="Phone Number"
 					class="form-control"
 				>
 			</div>
 			<div class="form-group">
 				<!-- <label for="email">Email:</label> -->
-				<input 
-					type="text" 
-					name= <%= "#{user_number}" + "_email"%> 
+				<input
+					type="text"
+					name= <%= "#{user_number}" + "_email"%>
 					placeholder="Email"
 					class="form-control"
 				>
@@ -51,11 +51,10 @@
 	<button class="send-user-info btn btn-success btn-lg btn-block form-submit">Next</button>
 </div>
 
-<span style="visibility: hidden; position: absolute;" 
-class="trip-id">
-<% if trip_ids[1] %>
-	<%= "#{trip_ids[0]}, #{trip_ids[1]}" %>
-<% else %>
-	<%= "#{trip_ids[0]}" %>
-<% end %>
+<span style="visibility: hidden; position: absolute;" class="trip-id">
+  <% if trip_ids[1] %>
+    <%= "#{trip_ids[0]}, #{trip_ids[1]}" %>
+  <% else %>
+    <%= "#{trip_ids[0]}" %>
+  <% end %>
 </span>
