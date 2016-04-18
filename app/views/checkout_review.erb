@@ -54,13 +54,15 @@
       <span style="display: block; min-height: 30px;">Pay with Card</span>
     </button>
   <% else %>
-    <form action="/stripe/charge" method="post" class="stripe-payment-form">
+    <form action="/stripe/charge" method="post" class="stripe-payment-form" id="stripe-pay-form">
       <input type="hidden" value="<%= passengers.length * trip_price_multiplier.to_i %>" name="cost">
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="<%= settings.publishable_key %>"
-              data-description="<%= passengers.length %> Sleepbus Ticket(s)"
-              data-amount= "<%= passengers.length * trip_price_multiplier.to_i %>"
-              data-locale="auto"></script>
+      <div class='stripe-wrapper'>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= settings.publishable_key %>"
+                data-description="<%= passengers.length %> Sleepbus Ticket(s)"
+                data-amount= "<%= passengers.length * trip_price_multiplier.to_i %>"
+                data-locale="auto"></script>
+      </div>
     </form>
   <% end %>
 </div>

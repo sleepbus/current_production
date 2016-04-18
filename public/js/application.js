@@ -49,6 +49,9 @@ var Model = {
       $('#passenger-details-back').show();
       $('#passenger-details').hide();
 			$('#confirmation-details').html(response);
+      $('.stripe-wrapper').click(function(){
+        fbq('track', 'Purchase');
+      })
 		});
     fbq('track', 'AddPaymentInfo');
 	},
