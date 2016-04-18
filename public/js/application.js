@@ -50,6 +50,7 @@ var Model = {
       $('#passenger-details').hide();
 			$('#confirmation-details').html(response);
 		});
+    fbq('track', 'AddPaymentInfo');
 	},
 
 	sendStripPaymentDetails: function(StripePaymentInfo){
@@ -241,6 +242,7 @@ startListeners = function(){
 		} else {
 			View.getTripDetailsFormInfo($(this), Model.sendOneWayTripDetails, tripType); //
 		}
+    fbq('track', 'AddToCart');
 	});
 
 	$('.number_of_adults').change(function(event){
@@ -362,6 +364,7 @@ function fakeTicketInit(){
 			method: "POST",
 			dataType: "json"
 		})
+    fbq('track', 'AddToWishlist');
   })
 }
 

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sleepbus</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-   <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
     <link href="/css/date_picker_style.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/application.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,900' rel='stylesheet' type='text/css'>
@@ -30,6 +31,7 @@
       ga('send', 'pageview');
     </script>
 
+    <%#
     <script>
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -40,13 +42,15 @@
       fbq('init', '1526577267650221');
       fbq('track', "PageView");
     </script>
+    %>
+
 <!--     <noscript>
       <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=1526577267650221&ev=PageView&noscript=1"
     /></noscript>
  -->
-    <title>Sleepbus</title>
 
+	  <%= erb :facebook_pixel %>
 	  <%= erb :favicon_icons %>
 </head>
 <body>

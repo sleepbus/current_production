@@ -25,6 +25,7 @@ Dotenv.load
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
+DEVELOPMENT = development?
 APP_NAME = APP_ROOT.basename.to_s
 set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
