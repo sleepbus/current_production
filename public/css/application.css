@@ -581,6 +581,7 @@ Landing Main
 .we-drive-row .we-drive-text{
   font-size: 18px;
   margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 766px) {
