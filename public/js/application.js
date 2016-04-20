@@ -111,7 +111,8 @@ var View = {
     var month = d.getMonth();
     if (month >= 4){ //show dates after may 3rd as available for now
       if (month == 4 && day < 3){
-        return false
+        var formatedDate = jQuery.datepicker.formatDate("yy-mm-dd", date);
+        return availableDates.indexOf(formatedDate) != -1;
       } else {
         return true;
       }
