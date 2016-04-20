@@ -565,7 +565,6 @@ Landing Main
 
 .map-row iframe{
   width: 100%;
-  pointer-events: none;
 }
 
 .map-row .map-title{
