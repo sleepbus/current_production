@@ -1,4 +1,5 @@
 get "/" do
+  #this is all inline for now and not necessary
 	page_information = info_array = [
 		{
 			"header" 			=> "Book Any <br> Ticket for $48",

@@ -1,5 +1,5 @@
-get "/admin" do 
+get "/admin/index" do
 	# unless sessions[:user_id]
 	# end
-	# erb :login
+	erb :admin_index, layout: :layout_admin
 end
