@@ -1,0 +1,35 @@
+<p>Thank you so much for purchasing a SleepBus Ticket!</p>
+<p>This message is to confirm your upcoming trip on SleepBus.</p>
+<p><%= "Passenger name: #{passenger.first_name} #{passenger.last_name}" %></p>
+<% depart_city = City.find(first_trip.depart_city_id) %>
+<% arrive_city = City.find(first_trip.end_city_id) %>
+<p>
+  <%= depart_city.name %> to <%= arrive_city.name %><br/>
+  DEPARTING @11pm<br/>
+  <%= first_trip.depart_date %><br/>
+  <%= depart_city.pick_drop_location %>
+</p>
+<p>
+  ARRIVING @6am
+  <%= first_trip.arrive_date %><br/>
+  <%= arrive_city.pick_drop_location %>
+</p>
+<% if second_trip.present? %>
+  <p>
+    <%= arrive_city.name %> to <%= depart_city.name %><br/>
+    DEPARTING @11pm<br/>
+    <%= second_trip.depart_date %><br/>
+    <%= arrive_city.pick_drop_location %>
+  </p>
+  <p>
+    ARRIVING @6am
+    <%= second_trip.arrive_date %><br/>
+    <%= depart_city.pick_drop_location %>
+  </p>
+<% end %>
+<br>
+<p>If you have any questions, please do not hesitate to call or text us at 415-688-1077.</p>
+<br>
+<p>Here's a photo of what the bus looks like on the outside to help you identify it:</p>
+<p><img src='http://www.sleepbus.co/images/bus/sleepbus3.jpg'></p>
+<p><img src='http://www.sleepbus.co/images/LOGO.png'></p>
