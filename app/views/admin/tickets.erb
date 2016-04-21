@@ -1,0 +1,13 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+    </tr>
+  </thead>
+  <% @tickets.each do |ticket| %>
+    <tr>
+      <td><%= ticket.id %></td>
+    </tr>
+  <% end %>
+</table>

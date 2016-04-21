@@ -11,7 +11,7 @@
 
 class Ticket < ActiveRecord::Base
   belongs_to :passenger
-  belongs_to :trips
+  belongs_to :trip
 
   after_validation :decrement_seats_left
 
