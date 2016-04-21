@@ -21,15 +21,19 @@ require "sinatra/cross_origin"
 require 'erb'
 require 'hirb'
 require 'dotenv'
+require 'pony'
+
 Dotenv.load
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 DEVELOPMENT = development?
 APP_NAME = APP_ROOT.basename.to_s
+
 set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
 Stripe.api_key = settings.secret_key
+
 configure do
   # By default, Sinatra assumes that the root is the file that calls the configure block.
   # Since this is not the case for us, we set it manually.
@@ -40,6 +44,19 @@ configure do
   enable :cross_origin
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+
+  Pony.options = {
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.sendgrid.net',
+      :port => '587',
+      :domain => 'sleepbus.co',
+      :user_name => 'bookmarkos',
+      :password => 'send10grid10',
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+  }
 end
 
 # Set up the controllers and helpers
