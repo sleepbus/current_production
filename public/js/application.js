@@ -22,6 +22,7 @@ var Model = {
 			View.hideCityToggle();
 			View.showPassengerDetails(response);
 		});
+    return false;
 	},
 
 	getAvailableDatesForXAdults: function(number_of_adults, depart_city_id, return_city_id){
@@ -187,15 +188,14 @@ var View = {
     }
   },
 
-	getTripDetailsFormInfo: function(formObj, callback, tripType){
+	getTripDetailsFormInfo: function(formObj){
 		var tripData = {};
     tripData["depart-date"] = formObj.find("input.depart-date").val();
     tripData["return-date"] = formObj.find("input.return-date").val();
 		tripData["number_of_adults"] = formObj.find(".number_of_adults").val();
 		tripData["departCityID"] = $(".depart-city").attr("data-city-id");
 		tripData["arriveCityID"] = $(".return-city").attr("data-city-id");
-		event.preventDefault();
-		callback(tripData);
+    return tripData;
 	},
 
 	toggleDatePickerLoading: function(){
@@ -241,12 +241,14 @@ startListeners = function(){
 
 	$(".trip-details-form").submit(function(event){
 		var tripType = $(".trip-details").attr("data-trip-type");
+    var tripData = View.getTripDetailsFormInfo($(this));
 		if (tripType == "round") {
-			View.getTripDetailsFormInfo($(this), Model.sendRoundTripDetails, tripType); // gets the data from the form then sends it as a param to the callback
+      Model.sendRoundTripDetails(tripData)
 		} else {
-			View.getTripDetailsFormInfo($(this), Model.sendOneWayTripDetails, tripType); //
+      Model.sendOneWayTripDetails(tripData)
 		}
     fbq('track', 'AddToCart');
+    return false;
 	});
 
 	$('.number_of_adults').change(function(event){
