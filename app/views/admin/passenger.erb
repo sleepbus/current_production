@@ -1,0 +1,25 @@
+<div class='text-center'>
+  <h3>Passenger details</h3>
+  <p><%= "#{@passenger.first_name} #{@passenger.last_name}" %></p>
+  <p><%= @passenger.email.present? ? @passenger.email : 'No email provided' %></p>
+  <p><%= @passenger.phone_number.present? ? @passenger.phone_number : 'No phone number provided' %></p>
+  <h3>Tickets purchased</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class='text-center'>Id</th>
+        <th class='text-center'>Depart date</th>
+        <th class='text-center'>Depart city</th>
+        <th class='text-center'>Purchase date</th>
+      </tr>
+    </thead>
+    <% @passenger.tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><a href='/admin/trip/<%= ticket.trip.id %>'><%= ticket.trip.depart_date.strftime('%b %e') %></a></td>
+        <td><%= ticket.trip.depart_city.name %></td>
+        <td><%= ticket.created_at.strftime('%b %e') %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

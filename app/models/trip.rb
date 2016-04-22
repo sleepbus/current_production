@@ -15,4 +15,5 @@
 
 class Trip < ActiveRecord::Base
   has_many :tickets
+  belongs_to :depart_city, class_name: 'City', foreign_key: :depart_city_id
 end

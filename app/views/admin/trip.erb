@@ -1,0 +1,21 @@
+<div class='text-center'>
+  <h3>Trip details</h3>
+  <p>Departing on: <%= @trip.depart_date.strftime('%b %e') %></p>
+  <p>Departing from: <%= @trip.depart_city.name %></p>
+  <p>Seats remaining: <%= @trip.seats_left %></p>
+  <h3>Passengers</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class='text-center'>Name</th>
+        <th class='text-center'>Email</th>
+      </tr>
+    </thead>
+    <% @trip.tickets.each do |ticket| %>
+      <tr>
+        <td><a href='/admin/passenger/<%= ticket.passenger.id %>'><%= "#{ticket.passenger.first_name} #{ticket.passenger.last_name}" %></a></td>
+        <td><%= ticket.passenger.email %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class='text-center'>Depart date</th>
+      <th class='text-center'>Depart city</th>
+      <th class='text-center'>Seats left</th>
+    </tr>
+  </thead>
+  <% @trips.each do |trip| %>
+    <tr class='text-center'>
+      <td><a href='/admin/trip/<%= trip.id %>'><%= trip.depart_date.strftime('%b %e') %></a></td>
+      <td><%= trip.depart_city.name %></td>
+      <td><%= trip.seats_left %></td>
+    </tr>
+  <% end %>
+</table>

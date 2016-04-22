@@ -1,2 +1,8 @@
-<p><%= "#{Ticket.count} tickets have been created" %></p>
-<p><%= "#{FakeTicket.count} fake tickets have been created" %></p>
+<div class='text-center'>
+  <p><%= "#{Ticket.count} tickets have been created total" %></p>
+  <p><%= "#{FakeTicket.count} fake tickets have been created total" %></p>
+  <form action="/admin/passengers/lookup" method="post">
+    <input id="passenger-email" name="email" type="text" />
+    <input name="commit" type="submit" value="Lookup passenger by email" />
+  </form>
+</div>
