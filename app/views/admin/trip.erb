@@ -12,10 +12,13 @@
       </tr>
     </thead>
     <% @trip.tickets.each do |ticket| %>
-      <tr>
-        <td><a href='/admin/passenger/<%= ticket.passenger.id %>'><%= "#{ticket.passenger.first_name} #{ticket.passenger.last_name}" %></a></td>
-        <td><%= ticket.passenger.email %></td>
-      </tr>
+      <% passenger = ticket.passenger %>
+      <% if passenger.present? %>
+        <tr>
+          <td><a href='/admin/passenger/<%= passenger.id %>'><%= "#{passenger.first_name} #{passenger.last_name}" %></a></td>
+          <td><%= passenger.email %></td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </div>
