@@ -51,8 +51,8 @@ configure do
       :address => 'smtp.sendgrid.net',
       :port => '587',
       :domain => 'sleepbus.co',
-      :user_name => 'bookmarkos',
-      :password => 'send10grid10',
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
       :authentication => :plain,
       :enable_starttls_auto => true
     }
