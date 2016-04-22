@@ -432,9 +432,9 @@ Landing Main
 }
 
 .bus-row .img-previews div{
+  width: 80px;
   float: left;
   vertical-align: top;
-  width: 80px;
   margin-right: 10px;
   margin-top: 10px;
   padding: 5px;
@@ -451,7 +451,6 @@ Landing Main
   border-radius: 4px;
   cursor: pointer;
 }
-
 
 .book-trip {
 	background-image: -webkit-linear-gradient( #1299F5 1%, #1173F0 100%);
@@ -646,6 +645,14 @@ Landing Main
 	.mobile-hr-display {
 		display: block;
 	}
+
+  .bus-row .img-previews div{
+    width: 25%;
+  }
+
+  .bus-row .img-previews div img{
+    width: 100%;
+  }
 
 	.no-display-mobile {
 		display: none;
