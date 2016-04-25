@@ -1,0 +1,18 @@
+<h2><%= @fake_tickets.count %> fake tickets for <%= @date_obj.strftime('%b %e') %></h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class='text-center'>Name</th>
+      <th class='text-center'>Email</th>
+      <th class='text-center'>Depart city</th>
+    </tr>
+  </thead>
+  <% @fake_tickets.each do |fake_ticket| %>
+    <tr class='text-center'>
+      <% passenger = fake_ticket.fake_passenger %>
+      <td><%= "#{passenger.first_name} #{passenger.last_name}" %></a></td>
+      <td><%= passenger.email %></td>
+      <td><%= fake_ticket.depart_city.name %></td>
+    </tr>
+  <% end %>
+</table>

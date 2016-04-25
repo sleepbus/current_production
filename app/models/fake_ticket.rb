@@ -12,5 +12,6 @@
 
 class FakeTicket < ActiveRecord::Base
   belongs_to :fake_passenger
+  belongs_to :depart_city, class_name: 'City', foreign_key: :depart_city_id
   validates_uniqueness_of :fake_passenger_id, scope: [ :depart_city_id, :depart_date ]
 end

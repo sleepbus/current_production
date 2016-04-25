@@ -37,9 +37,17 @@ post "/admin/passengers/lookup" do
   end
 end
 
-get "/admin/tickets" do
-  @tickets = Ticket.all.includes(:passenger, :trip)
-	erb :"admin/tickets", layout: :"admin/layout"
+get "/admin/fake_trips/:month" do
+  @month_name = params[:month]
+  @first_of_month = return_date_obj_from_month_name(@month_name)
+  @end_of_month = @first_of_month.end_of_month
+	erb :"admin/fake_trips", layout: :"admin/layout"
+end
+
+get "/admin/fake_trip/:date" do
+  @date_obj = Date.parse params[:date]
+  @fake_tickets = FakeTicket.includes(:fake_passenger).where(depart_date: @date_obj)
+	erb :"admin/fake_trip", layout: :"admin/layout"
 end
 
 get "/admin/login" do

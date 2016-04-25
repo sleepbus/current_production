@@ -1,0 +1,23 @@
+<h2>Fake Trips for <%= @month_name %></h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class='text-center'>Depart date</th>
+      <th class='text-center'>Ticket total</th>
+    </tr>
+  </thead>
+  <% (@first_of_month..@end_of_month).each do |date| %>
+    <tr class='text-center'>
+      <td><a href='/admin/fake_trip/<%= date %>'><%= date.strftime('%b %e') %></a></td>
+      <td><%= FakeTicket.where(depart_date: date).count %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% next_month = @first_of_month.advance(months:1) %>
+<p class='text-center'>
+  <a href='/admin/fake_trips/<%= next_month.strftime('%B') %>'>View fake trips in <%= next_month.strftime('%B') %></a>
+</p>
+<br>
+<br>
+<br>
