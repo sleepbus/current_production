@@ -3,11 +3,12 @@
 # Table name: fake_tickets
 #
 #  id                    :integer          not null, primary key
-#  passenger_id          :integer
+#  fake_passenger_id     :integer
 #  depart_city_id        :integer
 #  return_depart_city_id :integer
 #  depart_date           :date
 #  return_depart_date    :date
+#  created_at            :datetime
 #
 
 class FakeTicket < ActiveRecord::Base
