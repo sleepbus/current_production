@@ -7,6 +7,7 @@
 #  trip_id      :integer
 #  created_at   :datetime
 #  updated_at   :datetime
+#  refunded     :boolean          default(FALSE)
 #
 
 class Ticket < ActiveRecord::Base

@@ -1,5 +1,5 @@
 #trip and passenger show still need before_filters
-['/admin/index', '/admin/tickets', '/admin/trips', '/admin/passenger/*', '/admin/trip/*'].each do |path|
+['/admin/index', '/admin/tickets', '/admin/trips', '/admin/passenger/*', '/admin/trip/*', '/admin/trip/*/ticket/*/refund'].each do |path|
   before path do
     redirect '/admin/login' unless session[:admin_ok] == true
   end
@@ -48,6 +48,18 @@ get "/admin/fake_trip/:date" do
   @date_obj = Date.parse params[:date]
   @fake_tickets = FakeTicket.includes(:fake_passenger).where(depart_date: @date_obj)
 	erb :"admin/fake_trip", layout: :"admin/layout"
+end
+
+get "/admin/trip/:id/ticket/:ticket_id/refund" do
+  trip = Trip.find_by id: params[:id]
+  ticket = Ticket.find_by id: params[:ticket_id]
+  if trip && ticket
+    ticket.update_attribute :refunded, true
+    trip.increment! :seats_left
+    redirect_to "/admin/trip/#{trip.id}"
+  else
+    redirect '/admin/index'
+  end
 end
 
 get "/admin/login" do
