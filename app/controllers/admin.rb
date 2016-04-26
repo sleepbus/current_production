@@ -56,7 +56,7 @@ get "/admin/trip/:id/ticket/:ticket_id/refund" do
   if trip && ticket
     ticket.update_attribute :refunded, true
     trip.increment! :seats_left
-    redirect_to "/admin/trip/#{trip.id}"
+    redirect "/admin/trip/#{trip.id}"
   else
     redirect '/admin/index'
   end

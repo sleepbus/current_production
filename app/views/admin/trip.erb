@@ -18,7 +18,13 @@
         <tr>
           <td><a href='/admin/passenger/<%= passenger.id %>'><%= "#{passenger.first_name} #{passenger.last_name}" %></a></td>
           <td><%= passenger.email %></td>
-          <td><a href='/admin/trip/<%= @trip.id %>/ticket/<%= ticket.id %>/refund' class='btn btn-default btn-sm' onclick="return confirm('Are you sure ?')">Mark refunded</a></td>
+          <td>
+            <% if ticket.refunded? %>
+              Refunded
+            <% else %>
+              <a href='/admin/trip/<%= @trip.id %>/ticket/<%= ticket.id %>/refund' class='btn btn-default btn-sm' onclick="return confirm('Are you sure ?')">Mark refunded</a>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     <% end %>
