@@ -7,8 +7,8 @@ post "/trips/round" do
 		content_type :json
     depart_date = Date.strptime(params["depart-date"], "%m/%d/%Y")
     return_date = Date.strptime(params["return-date"], "%m/%d/%Y")
-    may_2nd = Date.new(2016, 5, 2)
-    if depart_date > may_2nd || return_date > may_2nd
+    may_1st = Date.new(2016, 5, 1)
+    if depart_date > may_1st || return_date > may_1st
       session[:depart_city_id] = params['departCityID']
       session[:return_depart_city_id] = params['arriveCityID']
       session[:depart_date] = params['depart-date']
@@ -56,8 +56,8 @@ end
 post "/trips/oneway" do
 	begin
     depart_date = Date.strptime(params["depart-date"], "%m/%d/%Y")
-    may_2nd = Date.new(2016, 5, 2)
-    if depart_date > may_2nd
+    may_1st = Date.new(2016, 5, 1)
+    if depart_date > may_1st
       session[:round_trip] = false
       session[:depart_city_id] = params['departCityID']
       session[:return_depart_city_id] = params['arriveCityID']
