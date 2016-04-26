@@ -1,5 +1,5 @@
 #trip and passenger show still need before_filters
-['/admin/index', '/admin/tickets', '/admin/trips'].each do |path|
+['/admin/index', '/admin/tickets', '/admin/trips', '/admin/passenger/*', '/admin/trip/*'].each do |path|
   before path do
     redirect '/admin/login' unless session[:admin_ok] == true
   end
